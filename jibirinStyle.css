@@ -1,0 +1,165 @@
+*{
+font-family: sans-serif;	
+}
+
+.wrap-content{
+	width: 100%;
+	
+}
+
+.header{
+	width: 100%;
+	min-height: 110px;
+	max-height: 300px;
+	background-color: rgb(22,141,190);
+	text-align: center;
+	color: white;
+	font-size: 40px;
+	font-weight: bold;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.4);
+}
+
+.header-2{
+	width: 100%;
+	height: 50px;
+	background-color: rgb(80,255,80);
+	text-align: center;
+	color: white;
+	font-size: 40px;
+	font-weight: bold;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.4);
+	margin-top: 50px;
+}
+
+
+
+
+
+.main-table, .finished-table, .create-task{
+	width: 100%;
+}
+.main-table td, .finished-table td, .create-task td{
+	padding: 5px;
+	
+
+}
+.main-table td input, .finished-table td input, .create-task td input{
+	text-align: center;
+
+}
+
+.main-table tr td:nth-child(1), .finished-table tr td:nth-child(1), .create-task tr td:nth-child(1) {
+	width: 4%;
+	height: 30px;
+}
+.main-table tr td:nth-child(2), .finished-table tr td:nth-child(2),.create-task tr td:nth-child(2){
+	width: 28%;
+	height: 30px;
+}
+.main-table tr td:nth-child(3), .finished-table tr td:nth-child(3), .create-task tr td:nth-child(3){
+	width: 37%;
+	height: 30px;
+}
+.main-table tr td:nth-child(4), .finished-table tr td:nth-child(4), .create-task tr td:nth-child(4){
+	width: 8%;
+	height: 30px;
+}
+.main-table tr td:nth-child(5), .finished-table tr td:nth-child(5), .create-task tr td:nth-child(5){
+	width: 8%;
+	height: 30px;
+}
+.main-table tr td:nth-child(6), .finished-table tr td:nth-child(6), .create-task tr td:nth-child(6){
+	width: 8%;
+	height: 30px;
+}
+.main-table tr td:nth-child(7), .finished-table tr td:nth-child(7), .create-task tr td:nth-child(7){
+	width: 7%;
+	height: 30px;
+}
+
+.main-table tr, .finished-table tr, .create-task tr{
+	font-weight: bold;
+	width: 100%;
+	font-size: 12px;
+}
+.input, .select{
+	width: 100%;
+	height: 30px;
+	resize: vertical;
+	max-height: 200px;
+
+
+}
+
+.finalizar, .eliminar, .revisar, .anadir, #reset, .actualizar{
+	border: none;
+	background-color: rgb(22,141,190);
+	font-weight: bold;
+	height: 30px;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.4);
+	cursor: pointer;
+	color: #fff;
+}
+.eliminar, #reset{
+	background-color: red;
+}
+
+.revisar{
+	background-color: orange;
+}
+.anadir{
+	background-color: rgb(80,255,80);
+	color: black;
+}
+
+.actualizar{
+	background-color: yellow;
+	color: black;
+}
+
+
+
+#anadir{
+	height: 30px;
+	width: 30px;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.4);
+	border: none;
+	margin-top: 10px;
+	background-color: rgb(80,255,80);
+	float: right;
+	margin-right: 10px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+
+
+
+#finalizados-2{
+	height: 30px;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.4);
+	border: none;
+	margin-top: 10px;
+	background-color: rgb(22,141,190);
+	float: left;
+	margin-left: 10px;
+	font-weight: bold;
+	cursor: pointer;
+}
+#finalizados{
+	height: 30px;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.4);
+	border: none;
+	margin-top: 10px;
+	background-color: rgb(80,255,80);
+	float: left;
+	margin-left: 10px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+
+.select{
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.4);
+	border: none;
+}
