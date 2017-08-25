@@ -1,96 +1,65 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 	<head>
-		<meta charset="UTF-8">
-		<title>JIBI</title>
-		<link rel="stylesheet" href="jibirinStyle.css"">
+		<meta charset="utf-8">
+		
+		<link rel="icon" type="favicon" href="img/redover.png"">
+		<title>Redover - LogIn</title>
+		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+		<style>
+			@import url('https://fonts.googleapis.com/css?family=Lato');
+		</style>
 	</head>
 	<body>
+	<?php
+	session_start();
+	if(isset($_SESSION['user'])){
+		header('location:redover.php');
+	}
 
-	
-		
-		<div class="wrap-content">
-			<div class="header"> JIBI   
-			<table class="create-task">
-<tr>
-					<td><form method="get" action="registroJibirin.php"><input type="text" class="input" name="prioridad" id="prioridad"></td>
-					<td><input type="text" class="input" name="tarea" id="tarea"></td>
-					<td><textarea type="text" class="input" name="descripcion" id="descripcion"></textarea></td>
-					<td><input type="text" class="input" name="inicio" id="inicio"></td>
-					<td><input type="text" class="input" name="fin" id="fin"></td>
-					<td>
-						<select class="select" onchange="validarEstado()" name="estado" id="estado">
-							<option class="pendiente" value="Pendiente">Pendiente</option>
-							<option class="proceso" value="En proceso">En proceso</option>
-							<option class="revisar" value="Revisar">Revisar</option>
-							<option class="finalizado" value="Finalizado">Finalizado</option>
-						</select>
-
-
-					</td>
-					<td><button type="submit" name="anadir" class="anadir">AÑADIR</button></td>
-					
-					<td><button type="reset" name="reset" id="reset">RESETEAR</button></form></td>
-					
-				</tr>
-
-
-</table>
-			</div>
-			<table class="main-table">
-				<tr>
-					<td>PRIORIDAD*</td>
-					<td>TAREA</td>
-					<td>DESCRIPCIÓN</td>
-					<td>INICIO*</td>
-					<td>FÍN*</td>
-					<td>ESTADO*</td>
-					<td></td>
-					<td></td>
-					
-				</tr>
-
-				<?php require('muestraJibirinStage.php'); ?>
-				
-				
-				
-			</table>
-			
+	 ?>
+		<style>
+			li{
+				margin:20px;
+				max-width: 100%;
+			}
+			li > input{
+				width: 50%;
+				height: 30px;
+				padding-left:5px;
+			}
+			*{
+				font-family: 'Lato', sans-serif;
+			}
+		</style>
+		<div style="text-align: center; padding-top: 5%;">
+			<img src="img/redover.png" style="max-width:200px" title=Redover>
 		</div>
+		<div class="divLogin">
+			<form method="post" action="php/access.php">
+				<ul id='registryTable' style="list-style: none;text-align:center;" class="txt-center">
+					<li><input id="signupUser" type="text" name="username" onchange="validateSignup('0')" placeholder="Username"></li>
+					<li><input id="signupMail" type="text" name="email" onchange="validateSignup('0')" onchange="validateMail('signupMail')" placeholder="Email  (example@redover.com)"></li>
+					<li><input id="password" type="password" name="password" onchange="validateSignup('0')" placeholder="Password "></li>
+					<li><input id="repeatPassword" type="password" name="verPassword" class="margin-bottom-20" onchange="validateSignup('0')" placeholder="Repeat password"></li>
+					<li style="max-width: 50%;margin: 0 auto;">
+						<input type="button" id="btn-signup" name="submitRegistry" value="Access" style="cursor: pointer; width: 50%;float:left;margin-left: 5px;border: none;background-color: #3897f0;font-size: 17px;color: white;" onclick="validateSignup('1')" >
+						<span style="float:right;margin-right:5px">¿Have an account?<a id='login' href='#' style='margin-left: 10px'> Log in </a></span>
+					</li>					
+				</ul>
+				<ul id='loginTable' style="list-style: none;text-align:center; display: none" class="txt-center">
+					<li><input id="signupUser" type="text" name="username" onchange="validateSignup('0')" placeholder="Username"></li>
+					<li><input id="password" type="password" name="password" onchange="validateSignup('0')" placeholder="Password "></li>
 
-
-
-		<div class="header-2"> TAREAS FINALIZADAS</div>
-		<table class="finished-table">
-			<?php require('muestraJibirinFinalizado.php'); ?>
-		</table>
-
-
-
-
-
-		<div style="clear: both; margin-top: 150px" >
-	<ul style="list-style-type: none; line-height: 0">
-		<li><h6>* Prioridad: 0 máxima 9 mínima </h6></li>
-		<li><h6> Inicio: fecha en la que se inició la tarea [dd/mm/aaaa] </h6></li>
-		<li><h6> Fin: fecha de de fin o de la última revisión</h6></li>
-		<li><h6> Estado: para volver a revisar una tarea ya finalizada se le deberà de canmbiar el estado a cualquiera que no sea "Finalizado"  </h6></li>
-		<li></li>
-		<li></li>
-	</ul>
-
-
+					<li style="max-width: 50%;margin: 0 auto;">
+						<input type="submit" id="btn-signup" name="submitSignup" value="Access" style="cursor: pointer; width: 50%;float:left;margin-left: 5px;border: none;background-color: #3897f0;font-size: 17px;color: white;" onclick="validateSignup('1')" >
+						<span style="float:right;margin-right:5px">¿Don't have an account?<a id='registry' href='#' style='margin-left: 10px'> Sign up </a></span>
+					</li>					
+				</ul>
+				<br>
+			</form>
 		</div>
-
-
-
-
-
-
-
-
-
 	</body>
-	<script type="text/javascript" src="../librerias/jquery.js"></script>
-	<script type="text/javascript" src="jibirinScript.js"></script>
+	<script type="text/javascript" src="jQuery/jquery.js"></script>
+	<script type="text/javascript" src="jQuery/script.js"></script>
 </html>
