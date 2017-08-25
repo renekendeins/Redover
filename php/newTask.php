@@ -24,7 +24,7 @@ try {
 	$result = $base -> prepare($query);
 	$result -> execute(array());
 
-	header('location:../ex.php');
+	header('location:../redover.php');
 } catch (Exception $e) {
 	echo "Error at line: " . $e -> getLine();
 }

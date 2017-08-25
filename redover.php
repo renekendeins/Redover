@@ -22,7 +22,7 @@
 				<table class="create-task" style="line-height:0;">
 				<form method="post" action="php/newTask.php">
 					<tr>
-						<td style="width:10%"><input type="text" class="input" name="priority" placeholder="Priority" ></td>
+						<td style="width:10%"><input type="number" max='9' min='0' class="input" name="priority" placeholder="Priority" ></td>
 						<td style="width:30%"><input type="text" class="input"  name="name" placeholder="Task name" ></td>
 						<td style="width:50%"><textarea type="text" class="input" name="description" placeholder="Task description" ></textarea></td>
 		<!-- 				<td><input type="text" class="input" name="start" id="inicio"></td>
