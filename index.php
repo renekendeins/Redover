@@ -43,7 +43,7 @@
 					<li><input id="password" type="password" name="password" onchange="validateSignup('0')" placeholder="Password "></li>
 					<li><input id="repeatPassword" type="password" name="verPassword" class="margin-bottom-20" onchange="validateSignup('0')" placeholder="Repeat password"></li>
 					<li style="max-width: 50%;margin: 0 auto;">
-						<input type="button" id="btn-signup" name="submitRegistry" value="Access" style="cursor: pointer; width: 50%;float:left;margin-left: 5px;border: none;background-color: #3897f0;font-size: 17px;color: white;" onclick="validateSignup('1')" >
+						<input type="button" id="btn-signup" name="registry" value="Access" style="cursor: pointer; width: 50%;float:left;margin-left: 5px;border: none;background-color: #3897f0;font-size: 17px;color: white;" onclick="validateSignup('1')" >
 						<span style="float:right;margin-right:5px">¿Have an account?<a id='login' href='#' style='margin-left: 10px'> Log in </a></span>
 					</li>					
 				</ul>
