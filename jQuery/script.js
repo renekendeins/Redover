@@ -207,6 +207,71 @@ function validateSignup(action){
        
 
 }
+function validateRegistry(action){
+
+    var signupUser = $("#signupUser").val();
+    var signupMail = $("#signupMail").val();
+    var signupPassword = $("#password").val();
+
+    var signupRepeatPassword = $("#repeatPassword").val();
+    var emailCss = $("#signupMail").css('border-color');
+
+  
+// alert(emailCss);
+
+
+    if(signupUser !== "" && signupMail !== "" && signupPassword !== "" && signupRepeatPassword !== ""){
+        if(signupPassword !== signupRepeatPassword || signupPassword == "" || signupRepeatPassword == ""){
+            $("#password").css('border', '1px solid red');
+            $("#repeatPassword").css('border', '1px solid red');
+            // alert("Your data are not correct");
+           
+
+          
+        }else{
+            $("#password").css('border', '1px solid rgb(80,255,80)');
+            $("#repeatPassword").css('border', '1px solid rgb(80,255,80)');
+            // contrasenasIguales();
+       
+        }
+       
+      
+    }else{
+
+        if(signupPassword !== signupRepeatPassword || signupPassword == "" || signupRepeatPassword == ""){
+            $("#password").css('border', '1px solid red');
+            $("#repeatPassword").css('border', '1px solid red');
+            // alert("Your data are not correct");
+          
+        }else{
+            $("#password").css('border', '1px solid rgb(80,255,80)');
+            $("#repeatPassword").css('border', '1px solid rgb(80,255,80)');
+            // contrasenasIguales();
+       
+        }
+    }
+
+    if(signupUser !== ""){
+        if(signupMail !== ""){
+            if(signupPassword !== "" ){
+                if(signupRepeatPassword !== ""){
+                    if(signupPassword == signupRepeatPassword){
+                        if(signupPassword != ""){
+                            if(signupRepeatPassword != ""){
+                                if(emailCss == 'rgb(80, 255, 80)'){
+                                    
+                                        $("#btn-registry").removeAttr('disabled');
+                                }                                    
+                            }
+                        }
+                    }                    
+                }
+            } 
+        } 
+    } 
+       
+
+}
 
 
 $("#login").click(function(){

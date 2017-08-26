@@ -4,7 +4,7 @@
 try {   
 
     if(isset($_POST['registry'])){
-        echo 'Rgistry';
+       
         $username = strip_tags($_POST["username"]);
         $email = strip_tags($_POST["email"]);
         $password = strip_tags($_POST["password"]);
@@ -28,12 +28,12 @@ try {
 
         session_start();
         $_SESSION['user'] = $_POST["username"];
-        // header('location:../redover.php'); 
+        header('location:../redover.php'); 
 
     }else if(isset($_POST['submitSignup'])){
         echo 'Singup';
         $username=strtolower(htmlentities(addslashes($_POST["username"])));
-        $password=htmlentities(addslashes($_POST["password"]));
+        $password=htmlentities(addslashes($_POST["password2"]));
         $counter = 0;
         require('db_con.php');    
         $sql="SELECT * FROM list_r WHERE USERNAME= :username OR EMAIL= :username";
@@ -56,7 +56,7 @@ try {
             if($counter > 0){
                 session_start();
                 $_SESSION["user"]=strtolower($_POST["username"]);
-                // header("location:../redover.php");
+                header("location:../redover.php");
                 $resultado->closeCursor();
             }else{
                 $resultado->closeCursor();
@@ -70,7 +70,7 @@ try {
 
     } catch (Exception $e) {
         echo "Error, try later!";
-        echo "Error at line: " . $e -> getLine();
+        // echo "Error at line: " . $e -> getLine();
     }
 
 ?>
